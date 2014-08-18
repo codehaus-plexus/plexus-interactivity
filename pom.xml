@@ -13,7 +13,12 @@
 
   <name>Plexus Interactivity Handler Component</name>
 
-  <modules>
+   <scm>
+    <connection>scn:git:git@github.com:sonatype/plexus-interactivity.git</connection>
+    <developerConnection>scn:git:git@github.com:sonatype/plexus-interactivity.git</developerConnection>
+  </scm>
+
+ <modules>
     <module>plexus-interactivity-api</module>
     <module>plexus-interactivity-jline</module>
   </modules>
