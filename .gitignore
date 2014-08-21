@@ -1,1 +1,7 @@
-target
+target/
+.project
+.classpath
+.settings/
+bin
+*.iml
+.idea
