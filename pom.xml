@@ -13,10 +13,16 @@
 
   <name>Plexus Interactivity Handler Component</name>
 
-   <scm>
-    <connection>scm:git:git@github.com:sonatype/plexus-interactivity.git</connection>
-    <developerConnection>scm:git:git@github.com:sonatype/plexus-interactivity.git</developerConnection>
+  <scm>
+    <connection>scm:git:git@github.com:codehaus-plexus/plexus-interactivity.git</connection>
+    <developerConnection>scm:git:git@github.com:codehaus-plexus/plexus-interactivity.git</developerConnection>
+    <url>http://github.com/codehaus-plexus/plexus-interactivity</url>
+    <tag>HEAD</tag>
   </scm>
+  <issueManagement>
+    <system>github</system>
+    <url>http://github.com/codehaus-plexus/plexus-interactivity/issues</url>
+  </issueManagement>
 
  <modules>
     <module>plexus-interactivity-api</module>
