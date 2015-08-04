@@ -14,8 +14,8 @@
   <name>Plexus Interactivity Handler Component</name>
 
    <scm>
-    <connection>scn:git:git@github.com:sonatype/plexus-interactivity.git</connection>
-    <developerConnection>scn:git:git@github.com:sonatype/plexus-interactivity.git</developerConnection>
+    <connection>scm:git:git@github.com:sonatype/plexus-interactivity.git</connection>
+    <developerConnection>scm:git:git@github.com:sonatype/plexus-interactivity.git</developerConnection>
   </scm>
 
  <modules>
