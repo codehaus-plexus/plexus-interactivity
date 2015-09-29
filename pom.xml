@@ -4,7 +4,7 @@
   <parent>
     <artifactId>plexus-components</artifactId>
     <groupId>org.codehaus.plexus</groupId>
-    <version>1.3.1</version>
+    <version>4.0-SNAPSHOT</version>
   </parent>
 
   <artifactId>plexus-interactivity</artifactId>
@@ -14,8 +14,8 @@
   <name>Plexus Interactivity Handler Component</name>
 
   <scm>
-    <connection>scm:git:git@github.com:codehaus-plexus/plexus-interactivity.git</connection>
-    <developerConnection>scm:git:git@github.com:codehaus-plexus/plexus-interactivity.git</developerConnection>
+    <connection>${scm.url}</connection>
+    <developerConnection>${scm.url}</developerConnection>
     <url>http://github.com/codehaus-plexus/plexus-interactivity</url>
     <tag>HEAD</tag>
   </scm>
@@ -23,9 +23,32 @@
     <system>github</system>
     <url>http://github.com/codehaus-plexus/plexus-interactivity/issues</url>
   </issueManagement>
+  <distributionManagement>
+    <site>
+      <id>github:gh-pages</id>
+      <url>${scm.url}</url>
+    </site>
+  </distributionManagement>
 
- <modules>
+  <properties>
+    <scm.url>scm:git:git@github.com:codehaus-plexus/plexus-interactivity.git</scm.url>
+  </properties>
+
+  <modules>
     <module>plexus-interactivity-api</module>
     <module>plexus-interactivity-jline</module>
   </modules>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-site-plugin</artifactId>
+        <configuration>
+          <topSiteURL>${scm.url}</topSiteURL>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
 </project>
