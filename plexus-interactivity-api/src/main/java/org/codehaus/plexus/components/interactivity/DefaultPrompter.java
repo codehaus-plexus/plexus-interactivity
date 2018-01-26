@@ -121,6 +121,9 @@ public class DefaultPrompter
             try
             {
                 line = inputHandler.readLine();
+                if (line == null && defaultReply == null) {
+                    throw new IOException("EOF");
+                }
             }
             catch ( IOException e )
             {
