@@ -31,7 +31,7 @@
   </distributionManagement>
 
   <properties>
-    <scm.url>https://github.com/codehaus-plexus/plexus-interactivity.git</scm.url>
+    <scm.url>scm:git:https://github.com/codehaus-plexus/plexus-interactivity.git</scm.url>
   </properties>
 
   <modules>
