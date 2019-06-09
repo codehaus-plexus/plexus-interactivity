@@ -16,12 +16,12 @@
   <scm>
     <connection>${scm.url}</connection>
     <developerConnection>${scm.url}</developerConnection>
-    <url>http://github.com/codehaus-plexus/plexus-interactivity</url>
+    <url>https://github.com/codehaus-plexus/plexus-interactivity</url>
     <tag>HEAD</tag>
   </scm>
   <issueManagement>
     <system>github</system>
-    <url>http://github.com/codehaus-plexus/plexus-interactivity/issues</url>
+    <url>https://github.com/codehaus-plexus/plexus-interactivity/issues</url>
   </issueManagement>
   <distributionManagement>
     <site>
@@ -31,7 +31,7 @@
   </distributionManagement>
 
   <properties>
-    <scm.url>scm:git:git@github.com:codehaus-plexus/plexus-interactivity.git</scm.url>
+    <scm.url>https://github.com/codehaus-plexus/plexus-interactivity.git</scm.url>
   </properties>
 
   <modules>
