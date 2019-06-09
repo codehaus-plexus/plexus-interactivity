@@ -8,7 +8,7 @@
   </parent>
 
   <artifactId>plexus-interactivity</artifactId>
-  <version>1.0</version>
+  <version>1.1-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <name>Plexus Interactivity Handler Component</name>
@@ -17,7 +17,7 @@
     <connection>${scm.url}</connection>
     <developerConnection>${scm.url}</developerConnection>
     <url>https://github.com/codehaus-plexus/plexus-interactivity</url>
-    <tag>plexus-interactivity-1.0</tag>
+    <tag>HEAD</tag>
   </scm>
   <issueManagement>
     <system>github</system>
