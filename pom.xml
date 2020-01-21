@@ -4,7 +4,7 @@
   <parent>
     <artifactId>plexus-components</artifactId>
     <groupId>org.codehaus.plexus</groupId>
-    <version>4.0</version>
+    <version>6.1</version>
   </parent>
 
   <artifactId>plexus-interactivity</artifactId>
@@ -32,6 +32,7 @@
 
   <properties>
     <scm.url>scm:git:https://github.com/codehaus-plexus/plexus-interactivity.git</scm.url>
+    <project.build.outputTimestamp>2020-01-20T18:52:37Z</project.build.outputTimestamp>
   </properties>
 
   <modules>
