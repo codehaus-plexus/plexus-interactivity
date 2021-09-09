@@ -38,7 +38,7 @@ import java.io.PrintWriter;
  * @version $Id$
  */
 public class DefaultOutputHandler
-    implements Initializable, Disposable, OutputHandler
+    implements Initializable, OutputHandler
 {
     private PrintWriter consoleWriter;
 
@@ -46,11 +46,6 @@ public class DefaultOutputHandler
         throws InitializationException
     {
         consoleWriter = new PrintWriter( System.out );
-    }
-
-    public void dispose()
-    {
-        consoleWriter.close();
     }
 
     public void write( String line )
