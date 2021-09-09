@@ -26,8 +26,6 @@ package org.codehaus.plexus.components.interactivity;
 
 import org.codehaus.plexus.personality.plexus.lifecycle.phase.Initializable;
 import org.codehaus.plexus.personality.plexus.lifecycle.phase.InitializationException;
-import org.codehaus.plexus.personality.plexus.lifecycle.phase.Disposable;
-import org.codehaus.plexus.components.interactivity.AbstractInputHandler;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -41,7 +39,7 @@ import java.io.InputStreamReader;
  */
 public class DefaultInputHandler
     extends AbstractInputHandler
-    implements Initializable, Disposable
+    implements Initializable
 {
     private BufferedReader consoleReader;
 
@@ -61,17 +59,5 @@ public class DefaultInputHandler
         throws InitializationException
     {
         consoleReader = new BufferedReader( new InputStreamReader( System.in ) );
-    }
-
-    public void dispose()
-    {
-        try
-        {
-            consoleReader.close();
-        }
-        catch ( IOException e )
-        {
-            getLogger().error( "Error closing input stream must be ignored", e );
-        }
     }
 }
