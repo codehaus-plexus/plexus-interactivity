@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<pmd version="4.2.5" timestamp="2019-06-09T20:12:57.321">
-<file name="D:\Entwicklung\Projekte\plexus-interactivity\target\checkout\plexus-interactivity-api\src\main\java\org\codehaus\plexus\components\interactivity\DefaultInputHandler.java">
-<violation beginline="30" endline="30" begincolumn="1" endcolumn="73" rule="ImportFromSamePackage" ruleset="Import Statement Rules" package="org.codehaus.plexus.components.interactivity" externalInfoUrl="http://pmd.sourceforge.net/rules/imports.html#ImportFromSamePackage" priority="3">
-No need to import a type that lives in the same package
-</violation>
-</file>
-</pmd>
