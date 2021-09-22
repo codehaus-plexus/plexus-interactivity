@@ -26,7 +26,7 @@ jobs:
       matrix:
         os: [ubuntu-latest,windows-latest, macOS-latest]
         java: [8, 11, 17]
-        jdk: [adopt-hotspot, zulu, adopt-openj9, temurin]
+        jdk: [adopt-hotspot, zulu, temurin]
       fail-fast: false
 
     runs-on: ${{ matrix.os }}
