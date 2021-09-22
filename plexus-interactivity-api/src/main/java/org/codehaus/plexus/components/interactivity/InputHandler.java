@@ -30,9 +30,9 @@ import java.io.IOException;
 /**
  * Manage user input from different sources.
  *
- * @todo should this also echo any prompts before the input?
- * @todo should this validate the input, reprompt if required?
- * @todo readBoolean, readInt, readSingleChar - readLine's that parse the input
+ * TODO should this also echo any prompts before the input?
+ * TODO should this validate the input, reprompt if required?
+ * TODO readBoolean, readInt, readSingleChar - readLine's that parse the input
  * @author <a href="mailto:brett@apache.org">Brett Porter</a>
  * @version $Id$
  */
