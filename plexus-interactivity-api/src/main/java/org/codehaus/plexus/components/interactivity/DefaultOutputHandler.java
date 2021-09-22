@@ -24,7 +24,6 @@ package org.codehaus.plexus.components.interactivity;
  * SOFTWARE.
  */
 
-import org.codehaus.plexus.personality.plexus.lifecycle.phase.Disposable;
 import org.codehaus.plexus.personality.plexus.lifecycle.phase.Initializable;
 import org.codehaus.plexus.personality.plexus.lifecycle.phase.InitializationException;
 
