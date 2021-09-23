@@ -42,10 +42,10 @@ public interface Prompter
     String prompt( String message, String defaultReply )
         throws PrompterException;
 
-    String prompt( String message, List possibleValues )
+    String prompt( String message, List<String> possibleValues )
         throws PrompterException;
 
-    String prompt( String message, List possibleValues, String defaultReply )
+    String prompt( String message, List<String> possibleValues, String defaultReply )
         throws PrompterException;
 
     String promptForPassword( String message )

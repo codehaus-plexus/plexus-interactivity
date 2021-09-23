@@ -40,10 +40,10 @@ public abstract class AbstractInputHandler
     extends AbstractLogEnabled
     implements InputHandler
 {
-    public List readMultipleLines()
+    public List<String> readMultipleLines()
         throws IOException
     {
-        List lines = new ArrayList();
+        List<String> lines = new ArrayList<>();
         String line = readLine();
         while ( line != null && line.length() > 0 )
         {

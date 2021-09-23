@@ -61,6 +61,6 @@ public interface InputHandler
      * Ends when an empty line is encountered.
      * @return a list of lines read
      */
-    List readMultipleLines()
+    List<String> readMultipleLines()
         throws IOException;
 }

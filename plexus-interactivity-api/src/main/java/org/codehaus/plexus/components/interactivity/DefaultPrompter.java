@@ -100,7 +100,7 @@ public class DefaultPrompter
         }
     }
 
-    public String prompt( String message, List possibleValues, String defaultReply )
+    public String prompt( String message, List<String> possibleValues, String defaultReply )
         throws PrompterException
     {
         String formattedMessage = formatMessage( message, possibleValues, defaultReply );
@@ -152,7 +152,7 @@ public class DefaultPrompter
         return line;
     }
 
-    public String prompt( String message, List possibleValues )
+    public String prompt( String message, List<String> possibleValues )
         throws PrompterException
     {
         return prompt( message, possibleValues, null );
@@ -180,9 +180,9 @@ public class DefaultPrompter
         }
     }
 
-    private String formatMessage( String message, List possibleValues, String defaultReply )
+    private String formatMessage( String message, List<String> possibleValues, String defaultReply )
     {
-        StringBuffer formatted = new StringBuffer( message.length() * 2 );
+        StringBuilder formatted = new StringBuilder( message.length() * 2 );
 
         formatted.append( message );
 
@@ -190,9 +190,9 @@ public class DefaultPrompter
         {
             formatted.append( " (" );
 
-            for ( Iterator it = possibleValues.iterator(); it.hasNext(); )
+            for ( Iterator<String> it = possibleValues.iterator(); it.hasNext(); )
             {
-                String possibleValue = (String) it.next();
+                String possibleValue = it.next();
 
                 formatted.append( possibleValue );
 

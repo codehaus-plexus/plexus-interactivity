@@ -4,7 +4,7 @@
   <parent>
     <artifactId>plexus-components</artifactId>
     <groupId>org.codehaus.plexus</groupId>
-    <version>6.5</version>
+    <version>6.6</version>
   </parent>
 
   <artifactId>plexus-interactivity</artifactId>
@@ -17,7 +17,6 @@
     <connection>${scm.url}</connection>
     <developerConnection>${scm.url}</developerConnection>
     <url>https://github.com/codehaus-plexus/plexus-interactivity</url>
-    <tag>plexus-interactivity-1.1</tag>
   </scm>
   <issueManagement>
     <system>github</system>
