@@ -49,7 +49,18 @@ public class DefaultPrompter
      */
     private InputHandler inputHandler;
 
-    public String prompt( String message )
+    public DefaultPrompter()
+    {
+        super();
+    }
+
+    public DefaultPrompter( OutputHandler outputHandler, InputHandler inputHandler )
+    {
+        this.outputHandler = outputHandler;
+        this.inputHandler = inputHandler;
+    }
+
+    public String prompt(String message )
         throws PrompterException
     {
         try
@@ -207,7 +218,7 @@ public class DefaultPrompter
 
         if ( defaultReply != null )
         {
-            formatted.append( ' ' ).append( defaultReply ).append( ": " );
+            formatted.append( ' ' ).append( defaultReply );
         }
 
         return formatted.toString();
