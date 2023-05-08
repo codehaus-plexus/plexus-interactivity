@@ -24,18 +24,18 @@ package org.codehaus.plexus.components.interactivity;
  * SOFTWARE.
  */
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
 import static java.util.Arrays.asList;
 import static java.util.Objects.requireNonNull;
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class DefaultPrompterTest
 {
     @Test
-    public void promptSimple() throws PrompterException {
+    void promptSimple() throws PrompterException {
         final InMemoryOutput out = new InMemoryOutput();
         final Prompter prompter = new DefaultPrompter( out, new InMemoryInput( "ok" ) );
         prompter.prompt( "test" );
@@ -43,7 +43,7 @@ public class DefaultPrompterTest
     }
 
     @Test
-    public void promptOption() throws PrompterException {
+    void promptOption() throws PrompterException {
         final InMemoryOutput out = new InMemoryOutput();
         final Prompter prompter = new DefaultPrompter( out, new InMemoryInput( "ok" ) );
         prompter.prompt( "test", "value" );
@@ -51,7 +51,7 @@ public class DefaultPrompterTest
     }
 
     @Test
-    public void promptOptions() throws PrompterException {
+    void promptOptions() throws PrompterException {
         final InMemoryOutput out = new InMemoryOutput();
         final Prompter prompter = new DefaultPrompter( out, new InMemoryInput( "yes" ) );
         prompter.prompt( "test", asList( "yes", "no" ), "value" );
