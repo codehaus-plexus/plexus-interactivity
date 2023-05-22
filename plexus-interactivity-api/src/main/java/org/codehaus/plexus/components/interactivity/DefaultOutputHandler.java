@@ -24,9 +24,7 @@ package org.codehaus.plexus.components.interactivity;
  * SOFTWARE.
  */
 
-import org.codehaus.plexus.personality.plexus.lifecycle.phase.Initializable;
-import org.codehaus.plexus.personality.plexus.lifecycle.phase.InitializationException;
-
+import javax.annotation.PostConstruct;
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -37,12 +35,12 @@ import java.io.PrintWriter;
  * @version $Id$
  */
 public class DefaultOutputHandler
-    implements Initializable, OutputHandler
+    implements OutputHandler
 {
     private PrintWriter consoleWriter;
 
+    @PostConstruct
     public void initialize()
-        throws InitializationException
     {
         consoleWriter = new PrintWriter( System.out );
     }

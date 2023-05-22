@@ -24,8 +24,6 @@ package org.codehaus.plexus.components.interactivity;
  * SOFTWARE.
  */
 
-import org.codehaus.plexus.logging.AbstractLogEnabled;
-
 import java.util.List;
 import java.util.ArrayList;
 import java.io.IOException;
@@ -37,7 +35,6 @@ import java.io.IOException;
  * @version $Id$
  */
 public abstract class AbstractInputHandler
-    extends AbstractLogEnabled
     implements InputHandler
 {
     public List<String> readMultipleLines()

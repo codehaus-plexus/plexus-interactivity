@@ -26,9 +26,8 @@ package org.codehaus.plexus.components.interactivity.jline;
 
 import jline.ConsoleReader;
 import org.codehaus.plexus.components.interactivity.AbstractInputHandler;
-import org.codehaus.plexus.personality.plexus.lifecycle.phase.Initializable;
-import org.codehaus.plexus.personality.plexus.lifecycle.phase.InitializationException;
 
+import javax.annotation.PostConstruct;
 import java.io.IOException;
 
 /**
@@ -39,7 +38,6 @@ import java.io.IOException;
  */
 public class JLineInputHandler
     extends AbstractInputHandler
-    implements Initializable
 {
     private ConsoleReader consoleReader;
 
@@ -55,8 +53,8 @@ public class JLineInputHandler
         return consoleReader.readLine( new Character( '*' ) );
     }
 
+    @PostConstruct
     public void initialize()
-        throws InitializationException
     {
         try
         {
@@ -64,7 +62,7 @@ public class JLineInputHandler
         }
         catch ( IOException e )
         {
-            throw new InitializationException( "Cannot create console reader: ", e );
+            throw new IllegalStateException( "Cannot create console reader: ", e );
         }
     }
 }

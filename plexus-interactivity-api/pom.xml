@@ -22,9 +22,13 @@
       <version>5.9.3</version>
       <scope>test</scope>
     </dependency>
+    <!--
+     | @PostConstruct and @PreDestroy help with Plexus->JSR330 migration
+    -->
     <dependency>
-      <groupId>org.codehaus.plexus</groupId>
-      <artifactId>plexus-container-default</artifactId>
+      <groupId>javax.annotation</groupId>
+      <artifactId>javax.annotation-api</artifactId>
+      <version>1.2</version>
     </dependency>
   </dependencies>
 </project>
