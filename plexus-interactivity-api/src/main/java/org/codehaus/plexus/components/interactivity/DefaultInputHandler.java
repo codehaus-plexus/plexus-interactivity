@@ -24,9 +24,7 @@ package org.codehaus.plexus.components.interactivity;
  * SOFTWARE.
  */
 
-import org.codehaus.plexus.personality.plexus.lifecycle.phase.Initializable;
-import org.codehaus.plexus.personality.plexus.lifecycle.phase.InitializationException;
-
+import javax.annotation.PostConstruct;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -39,7 +37,6 @@ import java.io.InputStreamReader;
  */
 public class DefaultInputHandler
     extends AbstractInputHandler
-    implements Initializable
 {
     private BufferedReader consoleReader;
 
@@ -55,8 +52,8 @@ public class DefaultInputHandler
         return consoleReader.readLine();
     }
 
+    @PostConstruct
     public void initialize()
-        throws InitializationException
     {
         consoleReader = new BufferedReader( new InputStreamReader( System.in ) );
     }
