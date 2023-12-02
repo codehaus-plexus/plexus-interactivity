@@ -21,25 +21,11 @@ on: [push, pull_request]
 
 jobs:
   build:
+    name: Build it
+    uses: codehaus-plexus/.github/.github/workflows/maven.yml@master
 
-    strategy:
-      matrix:
-        os: [ubuntu-latest,windows-latest, macOS-latest]
-        java: [8, 11, 17, 20]
-        jdk: [temurin]
-      fail-fast: false
-
-    runs-on: ${{ matrix.os }}
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Set up JDK
-        uses: actions/setup-java@v3
-        with:
-          cache: 'maven'
-          distribution: ${{ matrix.jdk }}
-          java-version: ${{ matrix.java }}
-
-      - name: Build with Maven
-        run: mvn install javadoc:javadoc -e -B -V
+  deploy:
+    name: Deploy
+    needs: build
+    uses: codehaus-plexus/.github/.github/workflows/maven-deploy.yml@master
+    secrets: inherit
