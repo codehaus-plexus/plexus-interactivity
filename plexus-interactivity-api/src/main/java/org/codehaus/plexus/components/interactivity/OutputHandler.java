@@ -32,21 +32,18 @@ import java.io.IOException;
  * @author <a href="mailto:brett@apache.org">Brett Porter</a>
  * @version $Id$
  */
-public interface OutputHandler
-{
+public interface OutputHandler {
     String ROLE = OutputHandler.class.getName();
 
     /**
      * Write  a single line of input, excluding the newline at the end.
      * @param line the line
      */
-    void write( String line )
-        throws IOException;
+    void write(String line) throws IOException;
 
     /**
      * Write  a single line of input, including the newline at the end.
      * @param line the line
      */
-    void writeLine( String line )
-        throws IOException;
+    void writeLine(String line) throws IOException;
 }

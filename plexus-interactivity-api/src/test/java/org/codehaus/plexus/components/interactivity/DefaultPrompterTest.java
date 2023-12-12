@@ -24,46 +24,43 @@ package org.codehaus.plexus.components.interactivity;
  * SOFTWARE.
  */
 
-import org.junit.jupiter.api.Test;
-
 import java.util.List;
+
+import org.junit.jupiter.api.Test;
 
 import static java.util.Arrays.asList;
 import static java.util.Objects.requireNonNull;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class DefaultPrompterTest
-{
+public class DefaultPrompterTest {
     @Test
     void promptSimple() throws PrompterException {
         final InMemoryOutput out = new InMemoryOutput();
-        final Prompter prompter = new DefaultPrompter( out, new InMemoryInput( "ok" ) );
-        prompter.prompt( "test" );
-        assertEquals( "test: ", out.builder.toString() );
+        final Prompter prompter = new DefaultPrompter(out, new InMemoryInput("ok"));
+        prompter.prompt("test");
+        assertEquals("test: ", out.builder.toString());
     }
 
     @Test
     void promptOption() throws PrompterException {
         final InMemoryOutput out = new InMemoryOutput();
-        final Prompter prompter = new DefaultPrompter( out, new InMemoryInput( "ok" ) );
-        prompter.prompt( "test", "value" );
+        final Prompter prompter = new DefaultPrompter(out, new InMemoryInput("ok"));
+        prompter.prompt("test", "value");
         assertEquals("test value: ", out.builder.toString());
     }
 
     @Test
     void promptOptions() throws PrompterException {
         final InMemoryOutput out = new InMemoryOutput();
-        final Prompter prompter = new DefaultPrompter( out, new InMemoryInput( "yes" ) );
-        prompter.prompt( "test", asList( "yes", "no" ), "value" );
+        final Prompter prompter = new DefaultPrompter(out, new InMemoryInput("yes"));
+        prompter.prompt("test", asList("yes", "no"), "value");
         assertEquals("test (yes/no) value: ", out.builder.toString());
     }
 
-    private static class InMemoryInput implements InputHandler
-    {
+    private static class InMemoryInput implements InputHandler {
         private final String line;
 
-        private InMemoryInput( String line )
-        {
+        private InMemoryInput(String line) {
             this.line = requireNonNull(line);
         }
 
@@ -73,32 +70,27 @@ public class DefaultPrompterTest
         }
 
         @Override
-        public String readPassword()
-        {
+        public String readPassword() {
             throw new UnsupportedOperationException();
         }
 
         @Override
-        public List<String> readMultipleLines()
-        {
+        public List<String> readMultipleLines() {
             throw new UnsupportedOperationException();
         }
     }
 
-    private static class InMemoryOutput implements OutputHandler
-    {
+    private static class InMemoryOutput implements OutputHandler {
         private final StringBuilder builder = new StringBuilder();
 
         @Override
-        public void write( String line )
-        {
-            builder.append( line );
+        public void write(String line) {
+            builder.append(line);
         }
 
         @Override
-        public void writeLine( String line )
-        {
-            builder.append( line );
+        public void writeLine(String line) {
+            builder.append(line);
         }
     }
 }

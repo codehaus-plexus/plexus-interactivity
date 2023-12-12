@@ -25,6 +25,7 @@ package org.codehaus.plexus.components.interactivity;
  */
 
 import javax.annotation.PostConstruct;
+
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -34,27 +35,20 @@ import java.io.PrintWriter;
  * @author Brett Porter
  * @version $Id$
  */
-public class DefaultOutputHandler
-    implements OutputHandler
-{
+public class DefaultOutputHandler implements OutputHandler {
     private PrintWriter consoleWriter;
 
     @PostConstruct
-    public void initialize()
-    {
-        consoleWriter = new PrintWriter( System.out );
+    public void initialize() {
+        consoleWriter = new PrintWriter(System.out);
     }
 
-    public void write( String line )
-        throws IOException
-    {
-        consoleWriter.print( line );
+    public void write(String line) throws IOException {
+        consoleWriter.print(line);
         consoleWriter.flush();
     }
 
-    public void writeLine( String line )
-        throws IOException
-    {
+    public void writeLine(String line) throws IOException {
         consoleWriter.println();
     }
 }

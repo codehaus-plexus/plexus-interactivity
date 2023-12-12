@@ -24,9 +24,9 @@ package org.codehaus.plexus.components.interactivity;
  * SOFTWARE.
  */
 
-import java.util.List;
-import java.util.ArrayList;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Base input handler, implements a default <code>readMultipleLines</code>.
@@ -34,17 +34,12 @@ import java.io.IOException;
  * @author Brett Porter
  * @version $Id$
  */
-public abstract class AbstractInputHandler
-    implements InputHandler
-{
-    public List<String> readMultipleLines()
-        throws IOException
-    {
+public abstract class AbstractInputHandler implements InputHandler {
+    public List<String> readMultipleLines() throws IOException {
         List<String> lines = new ArrayList<>();
         String line = readLine();
-        while ( line != null && line.length() > 0 )
-        {
-            lines.add( line );
+        while (line != null && line.length() > 0) {
+            lines.add(line);
             line = readLine();
         }
         return lines;

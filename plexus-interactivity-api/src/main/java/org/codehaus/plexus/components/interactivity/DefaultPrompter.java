@@ -24,11 +24,11 @@ package org.codehaus.plexus.components.interactivity;
  * SOFTWARE.
  */
 
-import org.codehaus.plexus.util.StringUtils;
-
 import java.io.IOException;
 import java.util.Iterator;
 import java.util.List;
+
+import org.codehaus.plexus.util.StringUtils;
 
 /**
  * Default prompter.
@@ -36,9 +36,7 @@ import java.util.List;
  * @author Brett Porter
  * @version $Id$
  */
-public class DefaultPrompter
-    implements Prompter
-{
+public class DefaultPrompter implements Prompter {
     /**
      * @requirement
      */
@@ -49,198 +47,141 @@ public class DefaultPrompter
      */
     private InputHandler inputHandler;
 
-    public DefaultPrompter()
-    {
+    public DefaultPrompter() {
         super();
     }
 
-    public DefaultPrompter( OutputHandler outputHandler, InputHandler inputHandler )
-    {
+    public DefaultPrompter(OutputHandler outputHandler, InputHandler inputHandler) {
         this.outputHandler = outputHandler;
         this.inputHandler = inputHandler;
     }
 
-    public String prompt(String message )
-        throws PrompterException
-    {
-        try
-        {
-            writePrompt( message );
-        }
-        catch ( IOException e )
-        {
-            throw new PrompterException( "Failed to present prompt", e );
+    public String prompt(String message) throws PrompterException {
+        try {
+            writePrompt(message);
+        } catch (IOException e) {
+            throw new PrompterException("Failed to present prompt", e);
         }
 
-        try
-        {
+        try {
             return inputHandler.readLine();
-        }
-        catch ( IOException e )
-        {
-            throw new PrompterException( "Failed to read user response", e );
+        } catch (IOException e) {
+            throw new PrompterException("Failed to read user response", e);
         }
     }
 
-    public String prompt( String message, String defaultReply )
-        throws PrompterException
-    {
-        try
-        {
-            writePrompt( formatMessage( message, null, defaultReply ) );
-        }
-        catch ( IOException e )
-        {
-            throw new PrompterException( "Failed to present prompt", e );
+    public String prompt(String message, String defaultReply) throws PrompterException {
+        try {
+            writePrompt(formatMessage(message, null, defaultReply));
+        } catch (IOException e) {
+            throw new PrompterException("Failed to present prompt", e);
         }
 
-        try
-        {
+        try {
             String line = inputHandler.readLine();
 
-            if ( StringUtils.isEmpty( line ) )
-            {
+            if (StringUtils.isEmpty(line)) {
                 line = defaultReply;
             }
 
             return line;
-        }
-        catch ( IOException e )
-        {
-            throw new PrompterException( "Failed to read user response", e );
+        } catch (IOException e) {
+            throw new PrompterException("Failed to read user response", e);
         }
     }
 
-    public String prompt( String message, List<String> possibleValues, String defaultReply )
-        throws PrompterException
-    {
-        String formattedMessage = formatMessage( message, possibleValues, defaultReply );
+    public String prompt(String message, List<String> possibleValues, String defaultReply) throws PrompterException {
+        String formattedMessage = formatMessage(message, possibleValues, defaultReply);
 
         String line;
 
-        do
-        {
-            try
-            {
-                writePrompt( formattedMessage );
-            }
-            catch ( IOException e )
-            {
-                throw new PrompterException( "Failed to present prompt", e );
+        do {
+            try {
+                writePrompt(formattedMessage);
+            } catch (IOException e) {
+                throw new PrompterException("Failed to present prompt", e);
             }
 
-            try
-            {
+            try {
                 line = inputHandler.readLine();
                 if (line == null && defaultReply == null) {
                     throw new IOException("EOF");
                 }
-            }
-            catch ( IOException e )
-            {
-                throw new PrompterException( "Failed to read user response", e );
+            } catch (IOException e) {
+                throw new PrompterException("Failed to read user response", e);
             }
 
-            if ( StringUtils.isEmpty( line ) )
-            {
+            if (StringUtils.isEmpty(line)) {
                 line = defaultReply;
             }
 
-            if ( line != null && !possibleValues.contains( line ) )
-            {
-                try
-                {
-                    outputHandler.writeLine( "Invalid selection." );
-                }
-                catch ( IOException e )
-                {
-                    throw new PrompterException( "Failed to present feedback", e );
+            if (line != null && !possibleValues.contains(line)) {
+                try {
+                    outputHandler.writeLine("Invalid selection.");
+                } catch (IOException e) {
+                    throw new PrompterException("Failed to present feedback", e);
                 }
             }
-        }
-        while ( line == null || !possibleValues.contains( line ) );
+        } while (line == null || !possibleValues.contains(line));
 
         return line;
     }
 
-    public String prompt( String message, List<String> possibleValues )
-        throws PrompterException
-    {
-        return prompt( message, possibleValues, null );
+    public String prompt(String message, List<String> possibleValues) throws PrompterException {
+        return prompt(message, possibleValues, null);
     }
 
-    public String promptForPassword( String message )
-        throws PrompterException
-    {
-        try
-        {
-            writePrompt( message );
-        }
-        catch ( IOException e )
-        {
-            throw new PrompterException( "Failed to present prompt", e );
+    public String promptForPassword(String message) throws PrompterException {
+        try {
+            writePrompt(message);
+        } catch (IOException e) {
+            throw new PrompterException("Failed to present prompt", e);
         }
 
-        try
-        {
+        try {
             return inputHandler.readPassword();
-        }
-        catch ( IOException e )
-        {
-            throw new PrompterException( "Failed to read user response", e );
+        } catch (IOException e) {
+            throw new PrompterException("Failed to read user response", e);
         }
     }
 
-    private String formatMessage( String message, List<String> possibleValues, String defaultReply )
-    {
-        StringBuilder formatted = new StringBuilder( message.length() * 2 );
+    private String formatMessage(String message, List<String> possibleValues, String defaultReply) {
+        StringBuilder formatted = new StringBuilder(message.length() * 2);
 
-        formatted.append( message );
+        formatted.append(message);
 
-        if ( possibleValues != null && !possibleValues.isEmpty() )
-        {
-            formatted.append( " (" );
+        if (possibleValues != null && !possibleValues.isEmpty()) {
+            formatted.append(" (");
 
-            for ( Iterator<String> it = possibleValues.iterator(); it.hasNext(); )
-            {
+            for (Iterator<String> it = possibleValues.iterator(); it.hasNext(); ) {
                 String possibleValue = it.next();
 
-                formatted.append( possibleValue );
+                formatted.append(possibleValue);
 
-                if ( it.hasNext() )
-                {
-                    formatted.append( '/' );
+                if (it.hasNext()) {
+                    formatted.append('/');
                 }
             }
 
-            formatted.append( ')' );
+            formatted.append(')');
         }
 
-        if ( defaultReply != null )
-        {
-            formatted.append( ' ' ).append( defaultReply );
+        if (defaultReply != null) {
+            formatted.append(' ').append(defaultReply);
         }
 
         return formatted.toString();
     }
 
-    private void writePrompt( String message )
-        throws IOException
-    {
-        outputHandler.write( message + ": " );
+    private void writePrompt(String message) throws IOException {
+        outputHandler.write(message + ": ");
     }
 
-    public void showMessage( String message )
-        throws PrompterException
-    {
-        try
-        {
-            writePrompt( message );
+    public void showMessage(String message) throws PrompterException {
+        try {
+            writePrompt(message);
+        } catch (IOException e) {
+            throw new PrompterException("Failed to present prompt", e);
         }
-        catch ( IOException e )
-        {
-            throw new PrompterException( "Failed to present prompt", e );
-        }
-
     }
 }
