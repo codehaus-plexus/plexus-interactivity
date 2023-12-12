@@ -1,9 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <artifactId>plexus-components</artifactId>
     <groupId>org.codehaus.plexus</groupId>
+    <artifactId>plexus-components</artifactId>
     <version>14.2</version>
   </parent>
 
@@ -12,6 +13,11 @@
   <packaging>pom</packaging>
 
   <name>Plexus Interactivity Handler Component</name>
+
+  <modules>
+    <module>plexus-interactivity-api</module>
+    <module>plexus-interactivity-jline</module>
+  </modules>
 
   <scm>
     <connection>${scm.url}</connection>
@@ -33,11 +39,6 @@
     <scm.url>scm:git:https://github.com/codehaus-plexus/plexus-interactivity.git</scm.url>
     <project.build.outputTimestamp>2021-09-11T07:20:06Z</project.build.outputTimestamp>
   </properties>
-
-  <modules>
-    <module>plexus-interactivity-api</module>
-    <module>plexus-interactivity-jline</module>
-  </modules>
 
   <build>
     <plugins>

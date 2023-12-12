@@ -30,16 +30,12 @@ package org.codehaus.plexus.components.interactivity;
  * @author <a href="mailto:brett@apache.org">Brett Porter</a>
  * @version $Id$
  */
-public class PrompterException
-    extends Exception
-{
-    public PrompterException( String message )
-    {
-        super( message );
+public class PrompterException extends Exception {
+    public PrompterException(String message) {
+        super(message);
     }
 
-    public PrompterException( String message, Throwable cause )
-    {
-        super( message, cause );
+    public PrompterException(String message, Throwable cause) {
+        super(message, cause);
     }
 }

@@ -24,11 +24,12 @@ package org.codehaus.plexus.components.interactivity.jline;
  * SOFTWARE.
  */
 
+import javax.annotation.PostConstruct;
+
+import java.io.IOException;
+
 import jline.ConsoleReader;
 import org.codehaus.plexus.components.interactivity.AbstractInputHandler;
-
-import javax.annotation.PostConstruct;
-import java.io.IOException;
 
 /**
  * Default input handler, that uses the console.
@@ -36,33 +37,23 @@ import java.io.IOException;
  * @author Brett Porter
  * @version $Id$
  */
-public class JLineInputHandler
-    extends AbstractInputHandler
-{
+public class JLineInputHandler extends AbstractInputHandler {
     private ConsoleReader consoleReader;
 
-    public String readLine()
-        throws IOException
-    {
+    public String readLine() throws IOException {
         return consoleReader.readLine();
     }
 
-    public String readPassword()
-        throws IOException
-    {
-        return consoleReader.readLine( new Character( '*' ) );
+    public String readPassword() throws IOException {
+        return consoleReader.readLine(new Character('*'));
     }
 
     @PostConstruct
-    public void initialize()
-    {
-        try
-        {
+    public void initialize() {
+        try {
             consoleReader = new ConsoleReader();
-        }
-        catch ( IOException e )
-        {
-            throw new IllegalStateException( "Cannot create console reader: ", e );
+        } catch (IOException e) {
+            throw new IllegalStateException("Cannot create console reader: ", e);
         }
     }
 }

@@ -24,8 +24,8 @@ package org.codehaus.plexus.components.interactivity;
  * SOFTWARE.
  */
 
-import java.util.List;
 import java.io.IOException;
+import java.util.List;
 
 /**
  * Manage user input from different sources.
@@ -36,8 +36,7 @@ import java.io.IOException;
  * @author <a href="mailto:brett@apache.org">Brett Porter</a>
  * @version $Id$
  */
-public interface InputHandler
-{
+public interface InputHandler {
     String ROLE = InputHandler.class.getName();
 
     /**
@@ -45,22 +44,19 @@ public interface InputHandler
      * If the input can be echoed, it will be.
      * @return the line read
      */
-    String readLine()
-        throws IOException;
+    String readLine() throws IOException;
 
     /**
      * Read a single line of input, swalling the newline at the end.
      * This method guarantees input is not echoed.
      * @return the line read
      */
-    String readPassword()
-        throws IOException;
+    String readPassword() throws IOException;
 
     /**
      * Read a set of lines. Equivalent to multiple calls to {@link #readLine()}.
      * Ends when an empty line is encountered.
      * @return a list of lines read
      */
-    List<String> readMultipleLines()
-        throws IOException;
+    List<String> readMultipleLines() throws IOException;
 }

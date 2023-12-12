@@ -32,25 +32,18 @@ import java.util.List;
  * @author <a href="mailto:brett@apache.org">Brett Porter</a>
  * @version $Id$
  */
-public interface Prompter
-{
+public interface Prompter {
     String ROLE = Prompter.class.getName();
 
-    String prompt( String message )
-        throws PrompterException;
+    String prompt(String message) throws PrompterException;
 
-    String prompt( String message, String defaultReply )
-        throws PrompterException;
+    String prompt(String message, String defaultReply) throws PrompterException;
 
-    String prompt( String message, List<String> possibleValues )
-        throws PrompterException;
+    String prompt(String message, List<String> possibleValues) throws PrompterException;
 
-    String prompt( String message, List<String> possibleValues, String defaultReply )
-        throws PrompterException;
+    String prompt(String message, List<String> possibleValues, String defaultReply) throws PrompterException;
 
-    String promptForPassword( String message )
-        throws PrompterException;
+    String promptForPassword(String message) throws PrompterException;
 
-    void showMessage( String message )
-        throws PrompterException;
+    void showMessage(String message) throws PrompterException;
 }
