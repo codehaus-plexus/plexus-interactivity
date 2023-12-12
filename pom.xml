@@ -4,8 +4,8 @@
 
   <parent>
     <groupId>org.codehaus.plexus</groupId>
-    <artifactId>plexus-components</artifactId>
-    <version>14.2</version>
+    <artifactId>plexus</artifactId>
+    <version>16</version>
   </parent>
 
   <artifactId>plexus-interactivity</artifactId>
