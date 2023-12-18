@@ -37,8 +37,6 @@ import java.util.List;
  * @version $Id$
  */
 public interface InputHandler {
-    String ROLE = InputHandler.class.getName();
-
     /**
      * Read a single line of input, swalling the newline at the end.
      * If the input can be echoed, it will be.

@@ -33,8 +33,6 @@ import java.util.List;
  * @version $Id$
  */
 public interface Prompter {
-    String ROLE = Prompter.class.getName();
-
     String prompt(String message) throws PrompterException;
 
     String prompt(String message, String defaultReply) throws PrompterException;

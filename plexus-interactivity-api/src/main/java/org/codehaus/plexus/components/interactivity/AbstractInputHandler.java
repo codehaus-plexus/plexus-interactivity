@@ -35,10 +35,11 @@ import java.util.List;
  * @version $Id$
  */
 public abstract class AbstractInputHandler implements InputHandler {
+    @Override
     public List<String> readMultipleLines() throws IOException {
         List<String> lines = new ArrayList<>();
         String line = readLine();
-        while (line != null && line.length() > 0) {
+        while (line != null && !line.isEmpty()) {
             lines.add(line);
             line = readLine();
         }
