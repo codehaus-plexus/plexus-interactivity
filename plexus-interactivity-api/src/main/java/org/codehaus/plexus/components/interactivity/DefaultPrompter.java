@@ -24,6 +24,9 @@ package org.codehaus.plexus.components.interactivity;
  * SOFTWARE.
  */
 
+import javax.inject.Inject;
+import javax.inject.Named;
+
 import java.io.IOException;
 import java.util.Iterator;
 import java.util.List;
@@ -36,26 +39,19 @@ import org.codehaus.plexus.util.StringUtils;
  * @author Brett Porter
  * @version $Id$
  */
+@Named
 public class DefaultPrompter implements Prompter {
-    /**
-     * @requirement
-     */
-    private OutputHandler outputHandler;
+    private final OutputHandler outputHandler;
 
-    /**
-     * @requirement
-     */
-    private InputHandler inputHandler;
+    private final InputHandler inputHandler;
 
-    public DefaultPrompter() {
-        super();
-    }
-
+    @Inject
     public DefaultPrompter(OutputHandler outputHandler, InputHandler inputHandler) {
         this.outputHandler = outputHandler;
         this.inputHandler = inputHandler;
     }
 
+    @Override
     public String prompt(String message) throws PrompterException {
         try {
             writePrompt(message);
@@ -70,6 +66,7 @@ public class DefaultPrompter implements Prompter {
         }
     }
 
+    @Override
     public String prompt(String message, String defaultReply) throws PrompterException {
         try {
             writePrompt(formatMessage(message, null, defaultReply));
@@ -90,6 +87,7 @@ public class DefaultPrompter implements Prompter {
         }
     }
 
+    @Override
     public String prompt(String message, List<String> possibleValues, String defaultReply) throws PrompterException {
         String formattedMessage = formatMessage(message, possibleValues, defaultReply);
 
@@ -127,10 +125,12 @@ public class DefaultPrompter implements Prompter {
         return line;
     }
 
+    @Override
     public String prompt(String message, List<String> possibleValues) throws PrompterException {
         return prompt(message, possibleValues, null);
     }
 
+    @Override
     public String promptForPassword(String message) throws PrompterException {
         try {
             writePrompt(message);
@@ -177,6 +177,7 @@ public class DefaultPrompter implements Prompter {
         outputHandler.write(message + ": ");
     }
 
+    @Override
     public void showMessage(String message) throws PrompterException {
         try {
             writePrompt(message);

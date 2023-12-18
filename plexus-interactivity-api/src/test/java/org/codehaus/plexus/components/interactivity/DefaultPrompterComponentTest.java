@@ -24,28 +24,20 @@ package org.codehaus.plexus.components.interactivity;
  * SOFTWARE.
  */
 
-import javax.inject.Named;
+import javax.inject.Inject;
 
-import java.io.PrintWriter;
+import org.eclipse.sisu.launch.InjectedTest;
+import org.junit.jupiter.api.Test;
 
-/**
- * Default output handler, that uses the console.
- *
- * @author Brett Porter
- * @version $Id$
- */
-@Named
-public class DefaultOutputHandler implements OutputHandler {
-    private final PrintWriter consoleWriter = new PrintWriter(System.out);
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-    @Override
-    public void write(String line) {
-        consoleWriter.print(line);
-        consoleWriter.flush();
-    }
+public class DefaultPrompterComponentTest extends InjectedTest {
 
-    @Override
-    public void writeLine(String line) {
-        consoleWriter.println();
+    @Inject
+    private Prompter prompter;
+
+    @Test
+    void smoke() throws PrompterException {
+        assertNotNull(prompter);
     }
 }

@@ -33,8 +33,6 @@ import java.io.IOException;
  * @version $Id$
  */
 public interface OutputHandler {
-    String ROLE = OutputHandler.class.getName();
-
     /**
      * Write  a single line of input, excluding the newline at the end.
      * @param line the line

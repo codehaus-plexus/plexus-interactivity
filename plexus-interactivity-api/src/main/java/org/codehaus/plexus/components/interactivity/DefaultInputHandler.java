@@ -24,7 +24,7 @@ package org.codehaus.plexus.components.interactivity;
  * SOFTWARE.
  */
 
-import javax.annotation.PostConstruct;
+import javax.inject.Named;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -36,19 +36,17 @@ import java.io.InputStreamReader;
  * @author Brett Porter
  * @version $Id$
  */
+@Named
 public class DefaultInputHandler extends AbstractInputHandler {
-    private BufferedReader consoleReader;
+    private final BufferedReader consoleReader = new BufferedReader(new InputStreamReader(System.in));
 
+    @Override
     public String readLine() throws IOException {
         return consoleReader.readLine();
     }
 
+    @Override
     public String readPassword() throws IOException {
         return consoleReader.readLine();
-    }
-
-    @PostConstruct
-    public void initialize() {
-        consoleReader = new BufferedReader(new InputStreamReader(System.in));
     }
 }
