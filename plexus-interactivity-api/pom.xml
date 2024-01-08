@@ -22,8 +22,8 @@
     <!-- JLine is optional -->
     <dependency>
       <groupId>org.jline</groupId>
-      <artifactId>jline</artifactId>
-      <version>3.23.0</version>
+      <artifactId>jline-reader</artifactId>
+      <version>3.25.0</version>
       <optional>true</optional>
     </dependency>
 
