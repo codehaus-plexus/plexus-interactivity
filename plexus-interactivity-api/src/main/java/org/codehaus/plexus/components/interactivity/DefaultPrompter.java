@@ -31,13 +31,10 @@ import java.io.IOException;
 import java.util.Iterator;
 import java.util.List;
 
-import org.codehaus.plexus.util.StringUtils;
-
 /**
  * Default prompter.
  *
  * @author Brett Porter
- * @version $Id$
  */
 @Named
 public class DefaultPrompter implements Prompter {
@@ -76,11 +73,9 @@ public class DefaultPrompter implements Prompter {
 
         try {
             String line = inputHandler.readLine();
-
-            if (StringUtils.isEmpty(line)) {
+            if ((line == null || line.isEmpty())) {
                 line = defaultReply;
             }
-
             return line;
         } catch (IOException e) {
             throw new PrompterException("Failed to read user response", e);
@@ -109,7 +104,7 @@ public class DefaultPrompter implements Prompter {
                 throw new PrompterException("Failed to read user response", e);
             }
 
-            if (StringUtils.isEmpty(line)) {
+            if ((line == null || line.isEmpty())) {
                 line = defaultReply;
             }
 

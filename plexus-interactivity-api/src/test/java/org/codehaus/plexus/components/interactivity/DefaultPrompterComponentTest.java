@@ -37,7 +37,7 @@ public class DefaultPrompterComponentTest extends InjectedTest {
     private Prompter prompter;
 
     @Test
-    void smoke() throws PrompterException {
+    void smoke() {
         assertNotNull(prompter);
     }
 }

@@ -36,17 +36,16 @@ import org.jline.reader.LineReaderBuilder;
  * Default input handler, that uses the console.
  *
  * @author Brett Porter
- * @version $Id$
  */
 @Named("jline")
 public class JLineInputHandler extends AbstractInputHandler {
-    private LineReader consoleReader = LineReaderBuilder.builder().build();
+    private final LineReader consoleReader = LineReaderBuilder.builder().build();
 
     public String readLine() throws IOException {
         return consoleReader.readLine();
     }
 
     public String readPassword() throws IOException {
-        return consoleReader.readLine(new Character('*'));
+        return consoleReader.readLine('*');
     }
 }

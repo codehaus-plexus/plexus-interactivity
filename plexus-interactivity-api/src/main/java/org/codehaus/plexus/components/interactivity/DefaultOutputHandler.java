@@ -32,7 +32,6 @@ import java.io.PrintWriter;
  * Default output handler, that uses the console.
  *
  * @author Brett Porter
- * @version $Id$
  */
 @Named
 public class DefaultOutputHandler implements OutputHandler {

@@ -32,7 +32,6 @@ import java.util.List;
  * Base input handler, implements a default <code>readMultipleLines</code>.
  *
  * @author Brett Porter
- * @version $Id$
  */
 public abstract class AbstractInputHandler implements InputHandler {
     @Override

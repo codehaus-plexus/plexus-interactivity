@@ -13,12 +13,6 @@
   <name>Plexus Default Interactivity Handler</name>
 
   <dependencies>
-    <dependency>
-      <groupId>org.codehaus.plexus</groupId>
-      <artifactId>plexus-utils</artifactId>
-      <version>4.0.0</version>
-    </dependency>
-
     <!-- JLine is optional -->
     <dependency>
       <groupId>org.jline</groupId>

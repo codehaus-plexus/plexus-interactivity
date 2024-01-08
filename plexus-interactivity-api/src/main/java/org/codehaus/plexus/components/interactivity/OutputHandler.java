@@ -30,7 +30,6 @@ import java.io.IOException;
  * Manage user output to different sources.
  *
  * @author <a href="mailto:brett@apache.org">Brett Porter</a>
- * @version $Id$
  */
 public interface OutputHandler {
     /**

@@ -34,7 +34,6 @@ import java.io.InputStreamReader;
  * Default input handler, that uses the console.
  *
  * @author Brett Porter
- * @version $Id$
  */
 @Named
 public class DefaultInputHandler extends AbstractInputHandler {

@@ -30,7 +30,6 @@ import java.util.List;
  * Prompt the user for input.
  *
  * @author <a href="mailto:brett@apache.org">Brett Porter</a>
- * @version $Id$
  */
 public interface Prompter {
     String prompt(String message) throws PrompterException;
