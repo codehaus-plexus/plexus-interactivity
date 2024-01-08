@@ -29,12 +29,10 @@ import java.util.List;
 
 /**
  * Manage user input from different sources.
- *
  * TODO should this also echo any prompts before the input?
  * TODO should this validate the input, reprompt if required?
  * TODO readBoolean, readInt, readSingleChar - readLine's that parse the input
  * @author <a href="mailto:brett@apache.org">Brett Porter</a>
- * @version $Id$
  */
 public interface InputHandler {
     /**
