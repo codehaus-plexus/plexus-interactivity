@@ -31,7 +31,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-public class DefaultPrompterComponentTest extends InjectedTest {
+class DefaultPrompterComponentTest extends InjectedTest {
 
     @Inject
     private Prompter prompter;

@@ -32,9 +32,9 @@ import static java.util.Arrays.asList;
 import static java.util.Objects.requireNonNull;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class DefaultPrompterTest {
+class DefaultPrompterTest {
     @Test
-    void promptSimple() throws PrompterException {
+    void promptSimple() throws Exception {
         final InMemoryOutput out = new InMemoryOutput();
         final Prompter prompter = new DefaultPrompter(out, new InMemoryInput("ok"));
         prompter.prompt("test");
@@ -42,7 +42,7 @@ public class DefaultPrompterTest {
     }
 
     @Test
-    void promptOption() throws PrompterException {
+    void promptOption() throws Exception {
         final InMemoryOutput out = new InMemoryOutput();
         final Prompter prompter = new DefaultPrompter(out, new InMemoryInput("ok"));
         prompter.prompt("test", "value");
@@ -50,7 +50,7 @@ public class DefaultPrompterTest {
     }
 
     @Test
-    void promptOptions() throws PrompterException {
+    void promptOptions() throws Exception {
         final InMemoryOutput out = new InMemoryOutput();
         final Prompter prompter = new DefaultPrompter(out, new InMemoryInput("yes"));
         prompter.prompt("test", asList("yes", "no"), "value");
