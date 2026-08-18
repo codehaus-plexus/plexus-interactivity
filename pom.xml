@@ -13,6 +13,7 @@
   <packaging>pom</packaging>
 
   <name>Plexus Interactivity Handler Component</name>
+  <description>A component for prompting the user for input on the console, including passwords.</description>
 
   <modules>
     <module>plexus-interactivity-api</module>
