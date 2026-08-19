@@ -22,7 +22,6 @@ Maintained, quietly. The API is small and settled; expect dependency updates rat
 <dependency>
   <groupId>org.codehaus.plexus</groupId>
   <artifactId>plexus-interactivity-api</artifactId>
-  <version>1.5.1</version>
 </dependency>
 ```
 
@@ -37,6 +36,8 @@ String name = prompter.prompt( "Project name" );
 String scope = prompter.prompt( "Scope", List.of( "compile", "test" ), "compile" );
 String secret = prompter.promptForPassword( "Password" );
 ```
+
+Check the badge above for the current version.
 
 A plugin that prompts should check `MavenSession.getRequest().isInteractiveMode()` first, so it does not
 hang a batch-mode build.
