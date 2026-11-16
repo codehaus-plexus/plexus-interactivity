@@ -57,7 +57,7 @@ class DefaultPrompterTest {
         assertEquals("test (yes/no) value: ", out.builder.toString());
     }
 
-    private static class InMemoryInput implements InputHandler {
+    private static final class InMemoryInput implements InputHandler {
         private final String line;
 
         private InMemoryInput(String line) {
