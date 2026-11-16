@@ -41,10 +41,12 @@ import org.jline.reader.LineReaderBuilder;
 public class JLineInputHandler extends AbstractInputHandler {
     private final LineReader consoleReader = LineReaderBuilder.builder().build();
 
+    @Override
     public String readLine() throws IOException {
         return consoleReader.readLine();
     }
 
+    @Override
     public String readPassword() throws IOException {
         return consoleReader.readLine('*');
     }
