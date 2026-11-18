@@ -28,7 +28,6 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 import java.io.IOException;
-import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -146,19 +145,7 @@ public class DefaultPrompter implements Prompter {
         formatted.append(message);
 
         if (possibleValues != null && !possibleValues.isEmpty()) {
-            formatted.append(" (");
-
-            for (Iterator<String> it = possibleValues.iterator(); it.hasNext(); ) {
-                String possibleValue = it.next();
-
-                formatted.append(possibleValue);
-
-                if (it.hasNext()) {
-                    formatted.append('/');
-                }
-            }
-
-            formatted.append(')');
+            formatted.append(" (").append(String.join("/", possibleValues)).append(')');
         }
 
         if (defaultReply != null) {
