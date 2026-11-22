@@ -36,16 +36,17 @@ import java.util.List;
  */
 public interface InputHandler {
     /**
-     * Read a single line of input, swalling the newline at the end.
+     * Read a single line of input, swallowing the newline at the end.
      * If the input can be echoed, it will be.
-     * @return the line read
+     * @return the line read, or {@code null} at the end of the input
      */
     String readLine() throws IOException;
 
     /**
-     * Read a single line of input, swalling the newline at the end.
-     * This method guarantees input is not echoed.
-     * @return the line read
+     * Read a single line of input, swallowing the newline at the end, for a password.
+     * The implementation decides how the input is shown: {@link DefaultInputHandler} echoes it like
+     * {@link #readLine()}, while {@code JLineInputHandler} masks it with {@code *}.
+     * @return the line read, or {@code null} at the end of the input
      */
     String readPassword() throws IOException;
 

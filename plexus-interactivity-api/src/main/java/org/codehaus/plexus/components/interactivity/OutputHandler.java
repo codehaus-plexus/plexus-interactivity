@@ -33,13 +33,13 @@ import java.io.IOException;
  */
 public interface OutputHandler {
     /**
-     * Write  a single line of input, excluding the newline at the end.
+     * Write text without a newline at the end.
      * @param line the line
      */
     void write(String line) throws IOException;
 
     /**
-     * Write  a single line of input, including the newline at the end.
+     * Write a line of text followed by a newline.
      * @param line the line
      */
     void writeLine(String line) throws IOException;

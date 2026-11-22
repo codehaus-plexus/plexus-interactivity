@@ -31,7 +31,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 /**
- * Default input handler, that uses the console.
+ * Default input handler, that reads from the console through {@code System.in}.
+ * Passwords are read like any other line, so they are echoed.
  *
  * @author Brett Porter
  */
