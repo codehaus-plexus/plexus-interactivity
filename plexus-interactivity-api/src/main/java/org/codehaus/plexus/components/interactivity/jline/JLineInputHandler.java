@@ -33,7 +33,8 @@ import org.jline.reader.LineReader;
 import org.jline.reader.LineReaderBuilder;
 
 /**
- * Default input handler, that uses the console.
+ * Input handler, registered under the name {@code jline}, that reads from the console with JLine.
+ * Passwords are masked with {@code *}. {@code jline-reader} is an optional dependency of this artifact.
  *
  * @author Brett Porter
  */
